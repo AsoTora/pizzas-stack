@@ -31,4 +31,4 @@ jobs:
           python-version: 3.8.14
       - name: execute py script
         run: |
-          python main.py "${{ inputs.h1 }}" "${{ inputs.h2 }}" "${{ inputs.h2 }}"
+          python main.py "${{ inputs.h1 }}" "${{ inputs.h2 }}" "${{ inputs.h3 }}"
