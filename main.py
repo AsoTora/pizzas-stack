@@ -17,17 +17,15 @@ def equalStacks(h1: list, h2: list, h3: list):
         return height
 
     # sort stacks by height and remove the 1st pizza
-    sorted_stacks = sorted([h1,h2,h3], key=sum, reverse=True)
-    print("pop elemnt from 0:", sorted_stacks[0].pop(0))
+    sorted_stacks = sorted([h1, h2, h3], key=sum, reverse=True)
+    sorted_stacks[0].pop(0)
     height = sum(sorted_stacks[0])
 
     while sum(sorted_stacks[1]) > height:
-        print(f"stack 1:{sorted_stacks[1]}")
-        print("pop elemnt:", sorted_stacks[1].pop(0))
+        sorted_stacks[1].pop(0)
 
     while sum(sorted_stacks[2]) > height:
-        print(f"stack 2:{sorted_stacks[1]}")
-        print("pop elemnt:", sorted_stacks[2].pop(0))
+        sorted_stacks[2].pop(0)
 
     return equalStacks(*sorted_stacks)
 
@@ -49,7 +47,6 @@ if __name__ == "__main__":
     #     params.append(ast.literal_eval(arg))
     # print(equalStacks(*params))
 
-    # print('\n')
     # print(equalStacks([3,2,1,1,1], [4,3,2], [1,1,4,1])) # 5
 
     # print('\n')
@@ -59,4 +56,4 @@ if __name__ == "__main__":
     # print(equalStacks([1, 1], [1, 3, 4], [1, 7, 1, 1])) #0
 
     # print('\n')
-    # print(equalStacks([2, 7, 3], [1, 10, 1, 4, 4, 4, 4], [12])) 
+    # print(equalStacks([2, 7, 3], [1, 10, 1, 4, 4, 4, 4], [12])) #12
