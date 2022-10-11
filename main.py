@@ -1,5 +1,7 @@
+from errno import EIDRM
 import sys
 import ast
+
 
 def equalStacks(h1: list, h2: list, h3: list):
     """
@@ -27,10 +29,14 @@ def equalStacks(h1: list, h2: list, h3: list):
 
 
 if __name__ == "__main__":
-    params = []
-    for arg in sys.argv[1:]:
-        params.append(ast.literal_eval(arg))
-    print(equalStacks(*params))
+
+    try:
+        params = []
+        for arg in sys.argv[1:]:
+            params.append(ast.literal_eval(arg))
+        print(equalStacks(*params))
+    except Exception as e:
+        print(f"Please make sure all the params are okay, an error occured: \n\t {e}")
 
     # print(equalStacks([1, 1, 1, 2, 3], [2, 3, 4], [1, 4, 1, 1]))
     # print(equalStacks([1, 1, 4, 2, 3], [3, 3, 4], [1, 4, 1, 1]))
