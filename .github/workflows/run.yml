@@ -1,0 +1,35 @@
+name: Run code
+
+on:
+  workflow_dispatch:
+    inputs:
+      h1:
+        type: string
+        description: "the first array of heights"
+        required: true
+        default: "[1, 2, 1, 1]"
+      h2:
+        type: string
+        description: "the second array of height"
+        required: true
+        default: "[1, 1, 2]"
+      h3:
+        type: string
+        description: "the third array of height"
+        required: true
+        default: "[1, 1]"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.14
+      - name: execute py script
+        run: |
+          python main.py ${{ inputs.h1 }} ${{ inputs.h2 }} ${{ inputs.h2 }}
