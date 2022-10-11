@@ -1,7 +1,6 @@
 name: Run code
 
 on:
-  push:
   workflow_dispatch:
     inputs:
       h1:
