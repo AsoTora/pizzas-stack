@@ -30,7 +30,6 @@ def equalStacks_rec(h1: list, h2: list, h3: list):
     return equalStacks(*sorted_stacks)
 
 
-
 def equalStacks(h1: list, h2: list, h3: list):
     """
     Find the maximum possible height of the stacks such that all of the stacks are exactly the same height. 
@@ -39,8 +38,6 @@ def equalStacks(h1: list, h2: list, h3: list):
 
     assume the input is always correct
     """
-
-    # return if result is achieved
 
     sorted_stacks = sorted([h1, h2, h3], key=sum, reverse=True)
 
@@ -56,10 +53,8 @@ def equalStacks(h1: list, h2: list, h3: list):
 
         while height_h3 > height_h1:
             height_h3 -= sorted_stacks[2].pop(0)
-        
+
     return height_h1
-
-
 
 
 if __name__ == "__main__":
